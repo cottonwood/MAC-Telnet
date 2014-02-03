@@ -1,3 +1,13 @@
+MAC-Telnet for FreeBSD
+Ported to FreeBSD by Frederic L. under contract from Cottonwood Computer
+
+To build under FreeBSD:
+
+CFLAGS+=-Werror -I/usr/local/include
+LDFLAGS+=-L/usr/local/lib
+MAKE_ARGS+="LIBS+= -lintl"
+
+
 MAC-Telnet for Linux
 ====================
 
