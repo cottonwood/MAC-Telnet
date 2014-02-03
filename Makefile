@@ -17,18 +17,18 @@ potclean:
 dist: distclean potclean pot
 
 install: all install-docs
-	install -d $(DESTDIR)/usr/bin
-	install mndp $(DESTDIR)/usr/bin/
-	install macping $(DESTDIR)/usr/bin/
-	install mactelnet $(DESTDIR)/usr/bin/
-	install -d $(DESTDIR)/usr/sbin
-	install -o root mactelnetd $(DESTDIR)/usr/sbin/
-	install -d $(DESTDIR)/etc
-	install -m 600 -o root config/mactelnetd.users $(DESTDIR)/etc/
+	install -d $(PREFIX)/bin
+	install mndp $(PREFIX)/bin/
+	install macping $(PREFIX)/bin/                                                           
+	install mactelnet $(PREFIX)/bin/
+	install -d $(PREFIX)/sbin
+	install -o root mactelnetd $(PREFIX)/sbin/
+	install -d $(PREFIX)/etc
+	install -m 600 -o root config/mactelnetd.users $(PREFIX)/etc/
 
 install-docs:
-	install -d $(DESTDIR)/usr/share/man/man1/
-	install docs/*.1 $(DESTDIR)/usr/share/man/man1/
+	install -d $(PREFIX)/share/man/man1/
+	install docs/*.1 $(PREFIX)/share/man/man1/
 
 pot: po/mactelnet.pot
 
